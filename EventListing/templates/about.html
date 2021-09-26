@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+
+{% block head %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=WindSong:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/EventListing/static/styleabout.css">
+{% endblock %}
+
+{%  block body %}
+{% load static %}
+
+{% for c in about %}
+<div class="selfimage" id="selfimage">
+    <img src="{{c.own_pic.url}}" class="ownimage" alt="">
+</div>
+<div class="aboutself">
+    <p>
+        {{c.about_urslf}}
+    </p>
+</div>
+{% endfor %}
+{%  endblock %}

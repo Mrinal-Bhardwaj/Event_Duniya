@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap CSS -->
+    <!--Bootstrap CDN-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" rel="stylesheet" />
+     <link href="static/css/navbar.css" rel="stylesheet" />   
+    
+    <!--Font Awesome CDN-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <!--Jquery library file CDN link-->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+
+
+    <link rel="stylesheet" href="/EventListing/static/style.css" />
+
+    {% block head %}
+    {% endblock head %}
+    <title>{% block title %}Event Listing {% endblock %}</title>
+</head>
+
+<body>
+    <!-- Previous Html -->
+    <div class="container-event">
+        <div class="nav-bar">
+            <div class="logo-section">
+                <img class="logo-img" src="/EventListing/static/logo.png" alt="" />
+            </div>
+            
+            <div class="links-section">
+                <div class="links">
+                    <li>
+                        <a class="nav-bar-item" href="\EventListing\"><span>Home</span></a>
+                    </li>
+                    <li>
+                        <a class="nav-bar-item" href="\EventListing\postanevent"><span>Post An Event</span></a>
+                    </li>
+                    <li>
+                        <a class="nav-bar-item" href="\EventListing\about"><span>About</span></a>
+                    </li>
+                    <li>
+                        <a class="nav-bar-item" href="\EventListing\contact"><span>Contact Us</span></a>
+                    </li>
+                </div>
+                <form method="get" action="/EventListing/search/">
+                    <div class="search-section">
+                        <input type="text" class="search-field" placeholder="Search.." name="search" id="search-box"/>
+                        <button type="submit" class="btn-search-field">Search</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        {% if messages %}
+        {% for message in messages %}
+        <div>
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                <strong> </strong>{{ message }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+    
+    {% block body %}
+    {% endblock %}
+    
+
+    <!-- <div class="footer">
+        <span class="copyright"> &copy; Rahul Kumar 2021 </span>
+    </div> -->
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

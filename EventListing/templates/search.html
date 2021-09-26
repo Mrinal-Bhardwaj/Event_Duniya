@@ -1,0 +1,67 @@
+{% extends 'index.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="/EventListing/static/searchresultstyle.css">
+{% endblock %}
+
+{% block body %}
+{% load static %}
+
+<h1>Search Results:</h1>
+
+{% if search_event|length < 1 %} 
+    <p>No search results found try different keyword.</p>
+    <br>
+    <p1><b>Suggestions:</b></p1>
+    <br>
+    <ul>
+        <li>Make sure to spell correctly</li><br>
+        <li>Try different keywords</li><br>
+        <li>Don't use very long keywords</li><br>
+        <li>If you are searching location, specify the place using proper keyword</li><br>
+        <li>You can also go to the jobs page and lookout manually for it</li>
+    </ul>
+    {% endif %}
+
+    {% for event in search_event %}
+    {% if event.post_or_not == True %}
+    <div class="event">
+        <div class="event-photo">
+            <img src="{{ event.pic_or_logo.url }}" alt="" />
+        </div>
+        <div class="event-name">
+            <span>Name: </span>{{event.Name_of_event}}
+        </div>
+        <div class="event-industry">
+            <span>Industry: </span>{{event.industry}}
+        </div>
+        <div class="event-organizer">
+            <span>Organizer: </span>{{event.organizer}}
+        </div>
+        <div class="event-date">
+            <span>Date: </span>{{event.duration}}
+        </div>
+        <div class="event-time">
+            <span>Time: </span>{{event.time}}
+        </div>
+        <div class="event-location">
+            <span>Location: </span>{{event.location}}
+        </div>
+        <div class="event-venue">
+            <span>Venue: </span>{{event.venue}}
+        </div>
+        <div class="event-registration">
+            <span>Link: <a href="">{{event.link_to_register}}</a> </span>
+            <!-- <i class="fab fa-facebook-square"></i>
+            <i class="fab fa-instagram-square"></i>
+            <i class="fab fa-twitter-square"></i>
+            <i class="fab fa-youtube-square"></i> -->
+        </div>
+        <div class="event-type">
+            <span>Type Of Event: </span>{{event.type_of_event}}
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+
+{% endblock %}

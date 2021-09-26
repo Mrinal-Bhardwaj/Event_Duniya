@@ -1,0 +1,18 @@
+h1 {
+        margin: 30px;
+        margin-left: 200px;
+    }
+p{
+    text-align: center;
+    }
+ul{
+    margin-left:200px;
+    }
+p1{
+    margin-left:225px;
+    }
+
+.event{
+    display: flex;
+    justify-content: center;
+}

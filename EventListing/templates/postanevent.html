@@ -1,0 +1,61 @@
+{% extends 'index.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="/EventListing/static/stylepostingform.css">
+{% endblock %}
+
+{% block body %}
+{% load static %}
+
+<div class="posteventform">
+    <div class="title">Posting Event</div>
+    <div class="formtopost">
+        <form action="/EventListing/postanevent/" method="post" enctype="multipart/form-data">{% csrf_token %}
+            <div class="inputfield">
+                <label>Name of Event: </label>
+                <input type="text" class="input" id="nameofevent" name="nameofevent">
+            </div>
+            <div class="inputfield">
+                <label>Event Poster: </label>
+                <input type="File" class="input" id="eventposter" name="eventposter">
+            </div>
+            <div class="inputfield">
+                <label>Location: </label>
+                <input type="text" class="input" idname="eventlocation" name="eventlocation">
+            </div>
+            <div class="inputfield">
+                <label>Duration: </label>
+                <input type="text" class="input" id="durationofevent" name="durationofevent">
+            </div>
+            <div class="inputfield">
+                <label>Time: </label>
+                <input type="text" class="input" id="eventtime" name="eventtime">
+            </div>
+            <div class="inputfield">
+                <label>Venue: </label>
+                <input type="text" class="input" id="eventvenue" name="eventvenue">
+            </div>
+            <div class="inputfield">
+                <label>Industry: </label>
+                <input type="text" class="input" id="eventindustry" name="eventindustry">
+            </div>
+            <div class="inputfield">
+                <label>Organizer: </label>
+                <input type="text" class="input" id="eventorganizer" name="eventorganizer">
+            </div>
+            <div class="inputfield">
+                <label>Link to register: </label>
+                <input type="text" class="input" id="eventlink" name="eventlink">
+            </div>
+            <div class="inputfield">
+                <label>Type of event: </label>
+                <input type="text" class="input" id="typeofevent" name="typeofevent">
+            </div>
+            <div class="submitbuttonforposting">
+                <button type="submit" class="submitpostbutton">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

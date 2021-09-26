@@ -1,0 +1,77 @@
+.posteventform{
+    background-color:  #055052;
+    max-width: 500px;
+    width: 100%;
+    margin: 20px auto;
+    padding: 30px;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.125);
+}
+
+.posteventform .title{
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #d9f6f7;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.posteventform .formtopost{
+    width: 100%;
+}
+
+.posteventform .formtopost .inputfield{
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.posteventform .formtopost .inputfield label{
+    width: 200px;
+    color: #d9f6f7;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.posteventform .formtopost .inputfield .input{
+    width: 100%;
+    outline: none;
+    border: 1px solid #d5dbd9;
+    font-size: 15px;
+    padding: 8px 10px;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.posteventform .formtopost .inputfield .input:focus{
+    border: 2px solid yellowgreen;
+}
+
+.posteventform .formtopost .submitbuttonforposting .submitpostbutton{
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 15px;
+    border: 0;
+    background-color: #758485;
+    color: #d9f6f7;
+    border-radius: 3px;
+    outline: none;
+}
+
+.posteventform .formtopost .inputfield:last-child{
+    margin-bottom: 0;
+}
+
+.posteventform .formtopost .submitbuttonforposting .submitpostbutton:hover{
+    background-color: #4db6b9;
+}
+
+@media (max-width: 420px){
+    .posteventform .formtopost .inputfield{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .posteventform .formtopost .inputfield label{
+        margin-bottom: 5px;
+    }
+}
