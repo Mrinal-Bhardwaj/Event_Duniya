@@ -12,7 +12,7 @@ class Event(models.Model):
     venue = models.CharField(max_length=100, default='')
     industry = models.CharField(max_length=20, default='')
     organizer = models.CharField(max_length=50, default='')
-    link_to_register = models.CharField(max_length=200, default='')
+    link_to_register = models.CharField(max_length=200, default=" ")
     type_of_event = models.CharField(max_length=50, default='')
     post_or_not = models.BooleanField(default=False)
 
@@ -20,8 +20,8 @@ class Event(models.Model):
         super().save(*args, **kwargs)
         img = Image.open(self.pic_or_logo.path)
 
-        if img.height > 300 or img.width > 300:
-            output_size = (300, 300)
+        if img.height > 1000 or img.width > 1000:
+            output_size = (1000, 1000)
             img.thumbnail(output_size)
             img.save(self.pic_or_logo.path)
 

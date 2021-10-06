@@ -3,7 +3,7 @@
 {% block body %}
 {% load static %}
 
-<div class="container-of-even">
+<div class="container-of-event">
     <div class="main">
         {% for event in all_events %}
         {% if event.post_or_not == True %}
@@ -33,7 +33,7 @@
                 <span>Venue: </span>{{event.venue}}
             </div>
             <div class="event-registration">
-                <span>Link: <a href="https://{{event.link_to_register}}">{{event.link_to_register}}</a> </span>
+                <span>Link: <a href="https://{{event.link_to_register}}">{{event.link_to_register}}</a></span>
                 <!-- <i class="fab fa-facebook-square"></i>
                 <i class="fab fa-instagram-square"></i>
                 <i class="fab fa-twitter-square"></i>

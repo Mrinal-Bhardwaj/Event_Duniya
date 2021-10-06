@@ -66,6 +66,11 @@
     background-color: #4db6b9;
 }
 
+.posteventform .imagesizelimit p{
+    color: #33c2c7;
+    font-size: small;
+}
+
 @media (max-width: 420px){
     .posteventform .formtopost .inputfield{
         flex-direction: column;

@@ -26,4 +26,5 @@ urlpatterns = [
     path('alllist/', views.alllist, name="alllist"),
     path('search/', views.search, name="search"),
     path('postanevent/', views.postanevent, name="postanevent"),
+    # path('delete_event/<event_id>',views.delete_event,name="delete_event"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

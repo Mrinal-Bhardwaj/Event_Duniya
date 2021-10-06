@@ -2,6 +2,9 @@
 
 {% block head %}
 <link rel="stylesheet" href="/EventListing/static/stylepostingform.css">
+<style>
+    
+</style>
 {% endblock %}
 
 {% block body %}
@@ -13,11 +16,14 @@
         <form action="/EventListing/postanevent/" method="post" enctype="multipart/form-data">{% csrf_token %}
             <div class="inputfield">
                 <label>Name of Event: </label>
-                <input type="text" class="input" id="nameofevent" name="nameofevent">
+                <input type="text" class="input" id="nameofevent" name="nameofevent" required>
             </div>
             <div class="inputfield">
                 <label>Event Poster: </label>
-                <input type="File" class="input" id="eventposter" name="eventposter">
+                <input type="File" max_size="1000" class="input" id="eventposter" name="eventposter" accept="image/x-png, image/gif, image/jpeg" required>
+            </div>
+            <div class="imagesizelimit">
+                <p>Image size required < 1MB</p>
             </div>
             <div class="inputfield">
                 <label>Location: </label>
@@ -25,7 +31,7 @@
             </div>
             <div class="inputfield">
                 <label>Duration: </label>
-                <input type="text" class="input" id="durationofevent" name="durationofevent">
+                <input type="text" class="input" id="durationofevent" name="durationofevent" required>
             </div>
             <div class="inputfield">
                 <label>Time: </label>
@@ -33,7 +39,7 @@
             </div>
             <div class="inputfield">
                 <label>Venue: </label>
-                <input type="text" class="input" id="eventvenue" name="eventvenue">
+                <input type="text" class="input" id="eventvenue" name="eventvenue" required>
             </div>
             <div class="inputfield">
                 <label>Industry: </label>
@@ -41,7 +47,7 @@
             </div>
             <div class="inputfield">
                 <label>Organizer: </label>
-                <input type="text" class="input" id="eventorganizer" name="eventorganizer">
+                <input type="text" class="input" id="eventorganizer" name="eventorganizer" required>
             </div>
             <div class="inputfield">
                 <label>Link to register: </label>

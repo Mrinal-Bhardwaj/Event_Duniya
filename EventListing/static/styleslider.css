@@ -165,3 +165,31 @@
     margin-right: 60px;
   }
 }
+
+@media only screen and (max-width:450px){
+ .bodyslider{
+    height: 60vh;
+  }
+  .slider{
+    height: 180px;
+    width: 330px;
+  }
+  .slide img{
+    height: 180px;
+    width: 330px;
+  }
+  .navigation-manual{
+    width: 330px;
+    margin-top: -300px;
+  }
+  .navigation-auto{
+    width: 330px;
+    margin-top: 200px;
+  }
+  .navigation-auto div:not(:last-child){
+    margin-right: 60px;
+  }
+  .manual-btn:not(:last-child){
+    margin-right: 60px;
+  } 
+}

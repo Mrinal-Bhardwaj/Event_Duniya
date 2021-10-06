@@ -79,3 +79,9 @@ def postanevent(request):
             request, "Thank You ! Your event will be posted as soon as verified :-)")
 
     return render(request, 'postanevent.html',{})
+
+
+# def delete_event(request,event_id):
+#     event = Event.objects.get(pk=event_id)
+#     event.delete()
+#     return redirect('alllist.html')

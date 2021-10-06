@@ -16,19 +16,19 @@
         <form action="/EventListing/contact/" method="post">{% csrf_token %}
             <div class="inputfield">
                 <label>Name: </label>
-                <input type="text" class="input" id="name" name="name">
+                <input type="text" class="input" id="name" placeholder="Name" name="name" required>
             </div>
             <div class="inputfield">
                 <label>Email: </label>
-                <input type="text" class="input" id="email" name="email">
+                <input type="email" class="input" id="email" placeholder="something@gmail.com" name="email" required>
             </div>
             <div class="inputfield">
                 <label>Phone: </label>
-                <input type="text" class="input" id="phone" name="phone">
+                <input type="tel" class="input" id="phone" placeholder="9988776655" name="phone" >
             </div>
             <div class="inputfield">
                 <label>Description: </label>
-                <input type="text" class="input" id="desc" name="desc">
+                <input type="text" class="input" id="desc" name="desc" required>
             </div>
             <div class="submitbuttonforposting">
                 <button type="submit" class="submitpostbutton">Submit</button>
